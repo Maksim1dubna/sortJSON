@@ -8,7 +8,7 @@ def employees_rewrite(sort_type):
             switch = True
         data['employees'] = sorted(data['employees'], key=lambda x: x[sort_type], reverse=switch)
 
-        with open('employees_lastname_sorted.json', 'w', encoding='utf-8') as json_file_write:
+        with open(f'employees_[{sort_type}]_sorted.json', 'w', encoding='utf-8') as json_file_write:
             json.dump(data, json_file_write, ensure_ascii=False,indent=4)
         return data
 print(employees_rewrite('salary'))
